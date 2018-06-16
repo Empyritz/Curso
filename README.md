@@ -1,2 +1,0 @@
-# Curso
-Ayuda para todos

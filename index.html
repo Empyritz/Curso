@@ -1,47 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <title>Cursos chidos</title>
+    <title>Cursos</title>
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web Starter Kit">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#2F3BA2">
+    <link rel="stylesheet" href="styles/main.css">
+
+
+
 </head>
+
 <body>
-    <section class="blogs">
-        <div class="h1">Blogs</div>
-        <div class="h2">
-            <a href="https://gitmoji.carloscuesta.me/" target="_blank">
-                <img src="emoji.jpeg" alt="">
+    <div class="content">
+        <h2>Especialidades</h2>
+        <div class="slider">
+            <a class="card popup" href="#!" data-link="http://www.youtube.com/embed/AxVXpS6PyRE?enablejsapi=1" data-title="Video 1" >
+                <div class="card-header">
+                    <span class="ball icon"></span>
+                    <h3>Lorem ipsum dolor sit amet..</h3>
+                </div>
+                <div class="card-body">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias impedit, officiis omnis tenetur facere
+                        minima laudantium quos similique, ducimus quod, soluta necessitatibus porro facilis sapiente! Tempore
+                        et in iusto quasi?</p>
+                </div>
             </a>
-        </div>
-        <div class="h3">
-            <a href="https://gitmoji.carloscuesta.me/" target="_blank">
-                <img src="emoji.jpeg" alt="">
+            <a class="card popup" href="#!" data-link="http://www.youtube.com/embed/F-KCncXMPk0?enablejsapi=1" data-title="Video 2">
+                <div class="card-header">
+                    <span class="gem icon"></span>
+                    <h3>Lorem ipsum dolor sit amet..</h3>
+                </div>
+                <div class="card-body">
+
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias impedit, officiis omnis tenetur facere
+                        minima laudantium quos similique, ducimus quod, soluta necessitatibus porro facilis sapiente! Tempore
+                        et in iusto quasi?</p>
+                </div>
             </a>
-        </div>
-        <div class="h4">
-            <a href="https://gitmoji.carloscuesta.me/" target="_blank">
-                <img src="emoji.jpeg" alt="">
+            <a class="card popup" href="#!" data-link="http://www.youtube.com/embed/nug1pMke-y4?enablejsapi=1" data-title="Video 3">
+                <div class="card-header">
+                    <span class="corazon icon"></span>
+                    <h3>Lorem ipsum dolor sit amet..</h3>
+                </div>
+                <div class="card-body">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias impedit, officiis omnis tenetur facere
+                        minima laudantium quos similique, ducimus quod, soluta necessitatibus porro facilis sapiente! Tempore
+                        et in iusto quasi?</p>
+                </div>
             </a>
+
         </div>
-        <div class="h5">
-            <a href="https://gitmoji.carloscuesta.me/" target="_blank">
-                <img src="emoji.jpeg" alt="">
-            </a>
+        <div class="video-view">
+            <div id="video-view"></div>
         </div>
-        <div class="h6">
-            <a href="https://gitmoji.carloscuesta.me/" target="_blank">
-                <img src="emoji.jpeg" alt="">
-            </a>
-        </div>
-        <div class="h7">
-            <a href="https://gitmoji.carloscuesta.me/" target="_blank">
-                <img src="emoji.jpeg" alt="">
-            </a>
-        </div>
-    </section>
-    
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(".popup").click(function () {
+            var $this = $(this);
+            var $iframe = $("<iframe>").attr("src", $this.data("link")).css({"width": 400, "height": 300});
+            var $title = $("<h1>").text($this.data("title"));
+            $("#video-view").html($title).append($iframe);
+            $iframe.wrap("<div class='class-video'>");
+        });
+   
+</script>
+
 </body>
+
 </html>
